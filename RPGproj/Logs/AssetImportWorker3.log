@@ -1,0 +1,263 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.5f1 (40eb3a945986) revision 4254522'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22000) 64bit Core' Language: 'ko' Physical Memory: 16010 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.5f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker3
+-projectPath
+C:/Users/guddn/GitPro/PracticeRepo/RPGproj
+-logFile
+Logs/AssetImportWorker3.log
+-srvPort
+52162
+Successfully changed project path to: C:/Users/guddn/GitPro/PracticeRepo/RPGproj
+C:/Users/guddn/GitPro/PracticeRepo/RPGproj
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 83.47 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.5f1 (40eb3a945986)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.5f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/guddn/GitPro/PracticeRepo/RPGproj/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) Arc(TM) A350M Graphics (ID=0x5694)
+    Vendor:   Intel
+    VRAM:     4018 MB
+    Driver:   30.0.101.1747
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.5f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.5f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.5f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56240
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.5f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.5f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.008313 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 105.81 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.740 seconds
+Domain Reload Profiling:
+	ReloadAssembly (741ms)
+		BeginReloadAssembly (116ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (516ms)
+			LoadAssemblies (113ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (138ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (36ms)
+			SetupLoadedEditorAssemblies (285ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (106ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (123ms)
+				ProcessInitializeOnLoadMethodAttributes (47ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.006095 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\guddn\GitPro\PracticeRepo\RPGproj\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\guddn\GitPro\PracticeRepo\RPGproj\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.62 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.984 seconds
+Domain Reload Profiling:
+	ReloadAssembly (985ms)
+		BeginReloadAssembly (129ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (22ms)
+		EndReloadAssembly (728ms)
+			LoadAssemblies (120ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (218ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (57ms)
+			SetupLoadedEditorAssemblies (314ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (64ms)
+				ProcessInitializeOnLoadAttributes (204ms)
+				ProcessInitializeOnLoadMethodAttributes (34ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 1.31 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3375 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 29 unused Assets / (86.1 KB). Loaded Objects now: 3837.
+Memory consumption went from 119.9 MB to 119.8 MB.
+Total: 5.846400 ms (FindLiveObjects: 0.410000 ms CreateObjectMapping: 0.293300 ms MarkObjects: 4.948100 ms  DeleteObjects: 0.189700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 13834.792252 seconds.
+  path: Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/BlackVariant/E.png
+  artifactKey: Guid(507d4180905b4c048b826b123565172d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/BlackVariant/E.png using Guid(507d4180905b4c048b826b123565172d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '385c472f55063ebc5e4f41849dd49196') in 0.335029 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.075304 seconds.
+  path: Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/LeftShift.png
+  artifactKey: Guid(2dd7ca2975bc2c845aff542aed0d0ed8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/LeftShift.png using Guid(2dd7ca2975bc2c845aff542aed0d0ed8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14ec19d1b8e0c519ce595216821f1f91') in 0.158411 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/NumLock.png
+  artifactKey: Guid(aa6ff305d2e4f8346aaaf1ea61f418b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/NumLock.png using Guid(aa6ff305d2e4f8346aaaf1ea61f418b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e479b3a7fb97de5701928af5e97bc29d') in 0.258034 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/Z.png
+  artifactKey: Guid(136fa6e13851aff42bc93b94873083be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/Z.png using Guid(136fa6e13851aff42bc93b94873083be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78da52e8674eec80dd7da1b35bb83bf5') in 0.221116 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/Underscore.png
+  artifactKey: Guid(778769f5835420e499c74f26c83d09f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/Underscore.png using Guid(778769f5835420e499c74f26c83d09f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d31543ab80e5dfb8233ed9dc2c6164c') in 0.242765 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/RightArrow.png
+  artifactKey: Guid(5e7bf63ec02090a4eaecb169714f30fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/RightArrow.png using Guid(5e7bf63ec02090a4eaecb169714f30fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c3631666e1e90b78f5838c457280f6b') in 0.270121 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/W.png
+  artifactKey: Guid(4a6f99cd2b6f6364abe5fea0b94ff267) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/W.png using Guid(4a6f99cd2b6f6364abe5fea0b94ff267) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3fbeaa84547f8b682e9fac483bf47f9') in 0.347346 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/Return.png
+  artifactKey: Guid(565e77bca1487df409db23f41b3090e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/Return.png using Guid(565e77bca1487df409db23f41b3090e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc36d56715a92be5f6131657e0946652') in 0.125859 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/N.png
+  artifactKey: Guid(237c636bb42cff44db63e29af1ff35b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/N.png using Guid(237c636bb42cff44db63e29af1ff35b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fece22a5e0389ac2c3513311e6ecde80') in 0.243471 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/T.png
+  artifactKey: Guid(45bea5c5404648b4697c116f813978f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/T.png using Guid(45bea5c5404648b4697c116f813978f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44e63bc5e1f172989f43e56b576df5a3') in 0.249813 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/Less.png
+  artifactKey: Guid(7d99e5e9b9c09ee4a9b938e7a787ee25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/Less.png using Guid(7d99e5e9b9c09ee4a9b938e7a787ee25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfef0b3775c78c58ad5ad63ed7f2375e') in 0.246704 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/SysReq.png
+  artifactKey: Guid(b449ae2df6c6a5e40b4b5820d66af526) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/SysReq.png using Guid(b449ae2df6c6a5e40b4b5820d66af526) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10f8a52bc347ffd36062f180604a4aea') in 0.240763 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/RightShift.png
+  artifactKey: Guid(819d3f0b0b08e2049af6f6a52bd9fc91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/RightShift.png using Guid(819d3f0b0b08e2049af6f6a52bd9fc91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17ca897e8de393a7326bade9e111bc91') in 0.154522 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/Space.png
+  artifactKey: Guid(81bfd0dae67af304fb6a934499ea557b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/Space.png using Guid(81bfd0dae67af304fb6a934499ea557b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b93e835952d4840543e3c74bb4a27e53') in 0.155788 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000064 seconds.
+  path: Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/V.png
+  artifactKey: Guid(301a78d927eb0084bb88778fe149071c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/V.png using Guid(301a78d927eb0084bb88778fe149071c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45f910b77e30fad7cc85f81454c1e942') in 0.246611 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 53.188596 seconds.
+  path: Assets/Pixel Skies DEMO/Pixel Skies 240x135px/demo04_PixelSky.png
+  artifactKey: Guid(d5195c18a9a87014da4daca597d44a77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Skies DEMO/Pixel Skies 240x135px/demo04_PixelSky.png using Guid(d5195c18a9a87014da4daca597d44a77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfd5beb986f84f20450bc623ddaf6b24') in 0.033624 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

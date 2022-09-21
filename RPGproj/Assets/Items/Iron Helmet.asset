@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef43d2022fdfc27478d5220627f48c97, type: 3}
+  m_Name: Iron Helmet
+  m_EditorClassIdentifier: 
+  equiptype: 2
+  itemType: 0
+  itemName: Iron Helmet
+  itemidx: 313
+  ItemImage: {fileID: 21300000, guid: b227c6c1c35b36940b602110d9556b13, type: 3}
+  itemPrefab: {fileID: 3853717614481282204, guid: 50120faa797edef42ba7b9f4dd13bd22, type: 3}
+  RecoveryPoint: 0
+  RequiredLevel: 8
+  AttackDamage: 0
+  Defense: 5

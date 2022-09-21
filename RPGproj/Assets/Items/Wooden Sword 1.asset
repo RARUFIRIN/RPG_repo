@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef43d2022fdfc27478d5220627f48c97, type: 3}
+  m_Name: Wooden Sword 1
+  m_EditorClassIdentifier: 
+  itemType: 0
+  itemName: WoodenSword
+  itemidx: 201
+  ItemImage: {fileID: 21300000, guid: 2ddf0348701148a4d8a7c6a0f7f146b3, type: 3}
+  itemPrefab: {fileID: 6485186083999981424, guid: a3ccdd3ab4c01fa4894ab21267f460c6, type: 3}
+  RecoveryPoint: 0
+  RequiredLevel: 0
+  AttackDamage: 10
+  Defense: 0

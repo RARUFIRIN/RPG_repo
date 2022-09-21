@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef43d2022fdfc27478d5220627f48c97, type: 3}
+  m_Name: Leather Boot
+  m_EditorClassIdentifier: 
+  equiptype: 3
+  itemType: 0
+  itemName: Leather Boot
+  itemidx: 302
+  ItemImage: {fileID: 21300000, guid: 29a1226f7b5e20240942612e151c3c4c, type: 3}
+  itemPrefab: {fileID: 1447505214979976903, guid: 96b5b3e14815c6f4886bb7353933cc40, type: 3}
+  RecoveryPoint: 0
+  RequiredLevel: 3
+  AttackDamage: 0
+  Defense: 3

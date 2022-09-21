@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef43d2022fdfc27478d5220627f48c97, type: 3}
+  m_Name: Beer
+  m_EditorClassIdentifier: 
+  equiptype: 4
+  itemType: 1
+  itemName: Beer
+  itemidx: 102
+  ItemImage: {fileID: 21300000, guid: d0c05b9125ed56349a5385e1a77547b7, type: 3}
+  itemPrefab: {fileID: 5081450646886255209, guid: 5b0efa849893e0340b62ebe146a568d6, type: 3}
+  RecoveryHP: 0
+  RecoveryMP: 20
+  RequiredLevel: 0
+  AttackDamage: 0
+  Defense: 0
