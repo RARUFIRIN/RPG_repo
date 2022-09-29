@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2484935679352866883}
   - component: {fileID: 5795563264902788418}
   - component: {fileID: 1006543274786530219}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Silver Sword
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

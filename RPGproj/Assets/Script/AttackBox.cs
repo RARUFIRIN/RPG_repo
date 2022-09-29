@@ -22,4 +22,12 @@ public class AttackBox : MonoBehaviour
         yield return new WaitForSeconds(SkillTime);
         Destroy(gameObject);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Monster"))
+        {
+            Destroy(this);
+        }
+    }
 }

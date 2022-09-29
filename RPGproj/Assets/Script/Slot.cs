@@ -54,23 +54,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
                 else if (item.itemType == Item.ItemType.Food)
                 {
                     // 소비아이템 소비
-                    Debug.Log(item.itemName + "를 사용했습니다.");
-                    if(item.RecoveryHP == 0)
-                    {
-                        if (GameMgr.GetInstance().PMP + item.RecoveryMP > GameMgr.GetInstance().PMaxMP)
-                            GameMgr.GetInstance().PMP = GameMgr.GetInstance().PMaxMP;
-                        else
-                            GameMgr.GetInstance().PMP += item.RecoveryMP;
-                        Debug.Log("마나를" + item.RecoveryMP + "만큼 회복했습니다.");
-                    }
-                    else if(item.RecoveryMP == 0)
-                    {
-                        if (GameMgr.GetInstance().PHP + item.RecoveryHP > GameMgr.GetInstance().PMaxHP)
-                            GameMgr.GetInstance().PHP = GameMgr.GetInstance().PMaxHP;
-                        else
-                            GameMgr.GetInstance().PHP += item.RecoveryHP;
-                        Debug.Log("체력을" + item.RecoveryHP + "만큼 회복했습니다.");
-                    }
+                    InventoryMgr.GetInstance().SpendPotion(item);
                     UpdateSlotCount(-1);
                 }
             }
@@ -176,4 +160,6 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
         image_count.SetActive(false); // 아이템 갯수표시를 비활성화
 
     }
+
+
 }

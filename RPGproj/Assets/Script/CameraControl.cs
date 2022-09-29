@@ -12,6 +12,7 @@ public class CameraControl : MonoBehaviour
 
     float HWidth;
     float HHeight;
+    [SerializeField]
     float MinX, MaxX, MinY, MaxY;
 
     void Start()
@@ -19,8 +20,6 @@ public class CameraControl : MonoBehaviour
         GPlayer = GameObject.Find("Player");
         HWidth = Camera.main.aspect * Camera.main.orthographicSize;
         HHeight = Camera.main.orthographicSize;
-        MinX = -1; MinY = -7;
-        MaxX = 51; MaxY = 10;
     }
 
 

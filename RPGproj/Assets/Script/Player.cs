@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
 
+
     Animator animator;
     // jumpstate
     float jump_pre;
@@ -49,6 +50,7 @@ public class Player : MonoBehaviour
         }
         RayCast();
         JumpState();
+        FallRimit();
     }
 
     void Move()
@@ -102,7 +104,7 @@ public class Player : MonoBehaviour
             animator.SetInteger("IsDown", 0);
         }
      
-
+        // ªÛ»£¿€øÎ
         if(Input.GetKey(KeyCode.G))
         {
             GameMgr.GetInstance().PTryInter = true;
@@ -211,10 +213,38 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("AttackBox") && CanDamaged == true)
         {
-            if(collision.CompareTag("Slime"))
+            switch (collision.name)
             {
-                Damaged(20);
+                case "AttackBox_Slime":
+                    {
+                        Damaged(20);
+                    }
+                    break;
+                case "AttackBox_Wolf":
+                    {
+                        Damaged(30);
+                    }
+                    break;
+                case "AttackBox_Hog":
+                    {
+                        Damaged(50);
+                    }
+                    break;
+                case "AttackBox_Troll_Normal":
+                    {
+                        Damaged(70);
+                    }
+                    break;
+                case "AttackBox_Troll_Power":
+                    {
+                        Damaged(120);
+                    }
+                    break;
+
+                default:
+                    break;
             }
+
         }
     }
 
@@ -237,4 +267,13 @@ public class Player : MonoBehaviour
         }
     }
 
+    void FallRimit()
+    {
+        if(transform.position.y < -9 )
+        {
+            Debug.Log("∂≥æÓ¡¸");
+            GameMgr.GetInstance().Respawn(0, 0);
+            Damaged(50);
+        }
+    }
 }

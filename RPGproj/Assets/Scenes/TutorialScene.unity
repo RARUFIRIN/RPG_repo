@@ -3813,7 +3813,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &291027566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3826,6 +3826,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0978f2d80653090479b84eda99d68df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriterenderer: {fileID: 1970579598}
+  bg: {fileID: 21300000, guid: 0094c1ddec51f7a4db1d4a203ffdee0f, type: 3}
+  PortalLeft: {fileID: 0}
+  PortalRight: {fileID: 1420825629}
 --- !u!4 &291027567
 Transform:
   m_ObjectHideFlags: 0
@@ -4360,9 +4364,12 @@ MonoBehaviour:
   Text_EXP: {fileID: 1173858418}
   Text_MaxEXP: {fileID: 1611761302}
   Fade: {fileID: 1859505452}
+  SceneNum: 0
   BackGround: {fileID: 1970579598}
   BG_1: {fileID: 21300000, guid: 0094c1ddec51f7a4db1d4a203ffdee0f, type: 3}
   BG_2: {fileID: 21300000, guid: d5195c18a9a87014da4daca597d44a77, type: 3}
+  Player: {fileID: 12810623}
+  Player_rigid: {fileID: 12810629}
 --- !u!1001 &375986134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5884,7 +5891,6 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
-  - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5972,6 +5978,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GPlayer: {fileID: 12810623}
+  MinX: -1
+  MaxX: 51
+  MinY: -7
+  MaxY: 10
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5988,18 +5998,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 32
   m_MaxRayIntersections: 0
---- !u!114 &519420035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79e3fc6ce2386514c8c249538a28c464, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &531092685
 GameObject:
   m_ObjectHideFlags: 0
@@ -15456,6 +15454,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400684060}
   m_CullTransparentMesh: 1
+--- !u!1 &1420825629 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3510009607727767636, guid: e20b3d2a0d4a61c48abded4fa51c5e82, type: 3}
+  m_PrefabInstance: {fileID: 3510009607334909800}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1432499048
 GameObject:
   m_ObjectHideFlags: 0
@@ -17708,7 +17711,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1603362306}
   - component: {fileID: 1603362305}
-  - component: {fileID: 1603362304}
   - component: {fileID: 1603362307}
   m_Layer: 0
   m_Name: EventSystem
@@ -17717,25 +17719,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1603362304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1603362303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!114 &1603362305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17775,9 +17758,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1603362303}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79e3fc6ce2386514c8c249538a28c464, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
 --- !u!1 &1604772025
 GameObject:
   m_ObjectHideFlags: 0
@@ -22012,6 +22002,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79e3fc6ce2386514c8c249538a28c464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1989959834
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1989959836}
+  - component: {fileID: 1989959835}
+  m_Layer: 0
+  m_Name: ItemDB
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1989959835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989959834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 304d54f48ff781f4f83c7bdaf1f4b6fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Apple: {fileID: 11400000, guid: 590fddfa7791f614b8e1f8c480c66065, type: 2}
+  Beer: {fileID: 11400000, guid: d593e70ac3690694a8f112f9e15c9b2a, type: 2}
+  WoodenSword: {fileID: 11400000, guid: 3dfcb8e950bdf4d40861b0125835eea3, type: 2}
+  IronSword: {fileID: 11400000, guid: d1d9d1b808cef6a428dc34170263f17b, type: 2}
+  LeatherArmor: {fileID: 11400000, guid: 96aa40c2346ab024d82f0cb14da21d4e, type: 2}
+  LeatherBoots: {fileID: 11400000, guid: 929b448e869ece1418be9c5f9b60c570, type: 2}
+  LeatherHelmet: {fileID: 11400000, guid: 938160b44f98e52478408302af3890e7, type: 2}
+  SilverSword: {fileID: 11400000, guid: 61284d82b9f6fab4e9a882cb6f8dc224, type: 2}
+  IronArmor: {fileID: 11400000, guid: 2c5c3214f93b0db4b93ce0bcc6b721e4, type: 2}
+  IronBoots: {fileID: 11400000, guid: 1a9830715096a2149b9e248019a6dfd5, type: 2}
+  IronHelmet: {fileID: 11400000, guid: ee057a8727977104bbc0caffadf428f4, type: 2}
+  GoldenSword: {fileID: 11400000, guid: 7fa6ff9c546844443a402db7f8f3b4f5, type: 2}
+--- !u!4 &1989959836
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989959834}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 26.978249, y: -0.263838, z: -1.9381834}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2019947923
 GameObject:
   m_ObjectHideFlags: 0

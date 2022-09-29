@@ -21,6 +21,7 @@ public class Prefab_item : MonoBehaviour
         if(collision.transform.CompareTag("Ground"))
         {
             rigid.velocity = new Vector2(0, 0);
+            rigid.bodyType = RigidbodyType2D.Static;
         }
     }
 }

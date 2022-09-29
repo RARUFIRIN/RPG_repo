@@ -200,4 +200,25 @@ public class InventoryMgr : MonoBehaviour
             }
         }
     }
+
+    public void SpendPotion(Item item)
+    {
+        Debug.Log(item.itemName + "를 사용했습니다.");
+        if (item.RecoveryHP == 0)
+        {
+            if (GameMgr.GetInstance().PMP + item.RecoveryMP > GameMgr.GetInstance().PMaxMP)
+                GameMgr.GetInstance().PMP = GameMgr.GetInstance().PMaxMP;
+            else
+                GameMgr.GetInstance().PMP += item.RecoveryMP;
+            Debug.Log("마나를" + item.RecoveryMP + "만큼 회복했습니다.");
+        }
+        else if (item.RecoveryMP == 0)
+        {
+            if (GameMgr.GetInstance().PHP + item.RecoveryHP > GameMgr.GetInstance().PMaxHP)
+                GameMgr.GetInstance().PHP = GameMgr.GetInstance().PMaxHP;
+            else
+                GameMgr.GetInstance().PHP += item.RecoveryHP;
+            Debug.Log("체력을" + item.RecoveryHP + "만큼 회복했습니다.");
+        }
+    }
 }

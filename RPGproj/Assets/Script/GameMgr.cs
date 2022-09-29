@@ -98,11 +98,17 @@ public class GameMgr : MonoBehaviour
     bool TryInter;
     [SerializeField]
     GameObject Fade;
+    public int SceneNum = -1;
 
     [SerializeField]
     SpriteRenderer BackGround;
     [SerializeField]
     Sprite BG_1, BG_2;
+
+    [SerializeField]
+    GameObject Player;
+    [SerializeField]
+    Rigidbody2D Player_rigid;
 
 
     private void Start()
@@ -114,7 +120,6 @@ public class GameMgr : MonoBehaviour
 
     private void Update()
     {
-        BGControl();
         ExpControl(); // EXP
         HPMPControl();
         StateControl();
@@ -205,7 +210,6 @@ public class GameMgr : MonoBehaviour
             Color c = Fade.GetComponent<Image>().color;
             c.a = f;
             Fade.GetComponent<Image>().color = c;
-            yield return null;
         }
         yield return new WaitForSeconds(1);
         Fade.SetActive(false);
@@ -225,26 +229,24 @@ public class GameMgr : MonoBehaviour
         SceneManager.LoadScene(i);
     }
 
-    void BGControl()
+    public void Respawn(float x, float y)
     {
-        switch (SceneManager.sceneCount)
-        {
-            case 1:
-                {
-                    BackGround.sprite = BG_1;
-                    break;
-                }
-            case 2:
-                {
-                    BackGround.sprite = BG_2;
-                    break;
-                }
-            default:
-                break;
-        }
+        Player_rigid.velocity = new Vector2(0, 0);
+        Player.transform.position = new Vector2(x, y);
     }
 
-
+    public bool GetRandomResult(int _per)
+    {
+        int result = Random.Range(1, 101);
+        if(result <= _per)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     #region State Get Set 
     public bool PTryInter
     {
@@ -337,5 +339,10 @@ public class GameMgr : MonoBehaviour
         get { return ArmorDef; }
         set { ArmorDef = value; }
     }      // 방어구 방어력
+    public int CurScene
+    {
+        get { return SceneNum; }
+        set { SceneNum = value; }
+    }
     #endregion
 }

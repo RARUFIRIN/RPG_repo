@@ -21,7 +21,7 @@ public class SpawnPoint : MonoBehaviour
 
     void Spawn()
     {
-        SpawnedMonster = Instantiate(SpawnMonster);
+        SpawnedMonster = Instantiate(SpawnMonster,new Vector3(transform.position.x,transform.position.y),Quaternion.identity);
     }
 
     IEnumerator CSapwnMonster()
@@ -29,7 +29,7 @@ public class SpawnPoint : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(5.0f);
-            if(SpawnedMonster == null)
+            if (SpawnedMonster == null)
             {
                 Spawn();
             }

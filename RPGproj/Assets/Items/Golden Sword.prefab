@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4782209337217341924}
   - component: {fileID: 1391316040350509521}
   - component: {fileID: 2271010554515984508}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Golden Sword
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

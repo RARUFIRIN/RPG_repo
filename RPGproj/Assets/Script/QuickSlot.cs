@@ -28,29 +28,32 @@ public class QuickSlot : MonoBehaviour, IDropHandler
     {
         if (item != null && LinkedSlot.item != item) // 퀵 슬롯 등록 상태에서 인벤토리 내부에서 자리변화가 일어났을 때 호출
         {
-            IsChangeNow = true;
-            if (InventoryMgr.GetInstance().GetChangedSlot(0) == LinkedSlot && IsChangeNow == true)
+            if (InventoryMgr.GetInstance().GetChangedSlot(0) != null && InventoryMgr.GetInstance().GetChangedSlot(1) != null)
             {
-                LinkedSlot = InventoryMgr.GetInstance().GetChangedSlot(1);
-                UpdateSlot();
-                IsChangeNow = false;
-            }
-            else if (InventoryMgr.GetInstance().GetChangedSlot(1) == LinkedSlot && IsChangeNow == true)
-            {
-                LinkedSlot = InventoryMgr.GetInstance().GetChangedSlot(0);
-                UpdateSlot();
-                IsChangeNow = false;
+                if (InventoryMgr.GetInstance().GetChangedSlot(0) == LinkedSlot)
+                {
+                    LinkedSlot = InventoryMgr.GetInstance().GetChangedSlot(1);
+                    UpdateSlot();
+                }
+                else if (InventoryMgr.GetInstance().GetChangedSlot(1) == LinkedSlot)
+                {
+                    LinkedSlot = InventoryMgr.GetInstance().GetChangedSlot(0);
+                    UpdateSlot();
+                }
+                StopCoroutine(ResetLink());
+                StartCoroutine(ResetLink());
             }
         }
 
-        if (IsChangeNow == false && LinkedSlot != null && LinkedSlot.itemCount >= 0)
+        if (LinkedSlot != null && LinkedSlot.itemCount > 0)
         {
             itemCount = LinkedSlot.itemCount;
             text_count.text = itemCount.ToString();
-            if (itemCount == 0)
-            {
-                QuickInven.GetInstance().ClearSlot(this);
-            }
+        }
+        else if(LinkedSlot != null && LinkedSlot.item == null)
+        {
+            QuickInven.GetInstance().ClearSlot(this);
+            OnClear = 1;
         }
 
         if (OnClear == 1 && itemCount == 0)
@@ -110,6 +113,11 @@ public class QuickSlot : MonoBehaviour, IDropHandler
         ItemImage.sprite = LinkedSlot.ItemImage.sprite;
     }
 
+    IEnumerator ResetLink()
+    {
+        yield return new WaitForSeconds(0.2f);
+        InventoryMgr.GetInstance().SetChangedSlots(null, null);
+    }
 
 }
 

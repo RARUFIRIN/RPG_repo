@@ -69,33 +69,7 @@ public class QuickInven : MonoBehaviour
     void SpendItem(int _i)
     {
         QuickSlots[_i].LinkedSlot.UpdateSlotCount(-1);
-
-        switch (QuickSlots[_i].item.itemName)
-        {
-            case "Apple":
-                {
-                    Debug.Log("사과 사용");
-                }
-                break;
-            case "Beer":
-                {
-                    Debug.Log("맥주 사용");
-                }
-                break;
-            case "Bread":
-                {
-                    Debug.Log("빵 사용");
-                }
-                break;
-            case "Cheese":
-                {
-                    Debug.Log("치즈 사용");
-                }
-                break;
-            default:
-                break;
-        }
-
+        InventoryMgr.GetInstance().SpendPotion(QuickSlots[_i].item);
     }
 
 
