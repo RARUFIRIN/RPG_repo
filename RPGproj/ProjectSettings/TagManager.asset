@@ -12,6 +12,10 @@ TagManager:
   - Wolf
   - Hog
   - Troll
+  - NAttack
+  - SAttack
+  - QuickSlot
+  - SkillSlot
   layers:
   - Default
   - TransparentFX

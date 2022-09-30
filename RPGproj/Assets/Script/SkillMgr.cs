@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SkillMgr : MonoBehaviour
 {
-    // 인벤토리 싱글톤 //
+    // 스킬매니저 싱글톤 //
     private SkillMgr() { }
     private static SkillMgr instance = null;
     public static SkillMgr GetInstance()
@@ -33,20 +33,35 @@ public class SkillMgr : MonoBehaviour
     }
 
     float SkillTime;
-    Vector2 SkillVec;
+    Vector2 SkillVelocity;
+    [SerializeField]
+    Item NAttack;
+    [SerializeField]
+    Item SAttack;
+    [SerializeField]
+    Item Jump;
     
 
-    public void SetSkill(float _f, Vector2 _Vec)
+    public Item SetSkill(float _f, Vector2 _vec, int _skillNum)
     {
-        SkillTime = _f;
-        SkillVec = _Vec;
+        SkillTime = _f;             // 스킬 유지시간
+        SkillVelocity = _vec;       // 스킬 움직임
+        if (_skillNum == 0)         // 스킬 구분
+            return NAttack;
+        else if (_skillNum == 1)
+            return SAttack;
+        else if (_skillNum == 2)
+            return Jump;
+        else
+            return null;
+
     }
     public float GetSkillTime()
     {
         return SkillTime;
     }
-    public Vector2 GetSkillVec()
+    public Vector2 GetSkillVelocity()
     {
-        return SkillVec;
+        return SkillVelocity;
     }
 }

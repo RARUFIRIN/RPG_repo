@@ -15,16 +15,26 @@ public class QuickInven : MonoBehaviour
         }
         return instance;
     }
+    [SerializeField]
+    GameObject QuickSlotsParent;
+    [SerializeField]
+    GameObject SkillSlotsParent;
+    [SerializeField]
+    GameObject Player;
+
+    QuickSlot[] QuickSlots;
+    QuickSlot[] SkillSlots;
     private void Awake()
     {
         instance = this;
-        QuickSlots = this.GetComponentsInChildren<QuickSlot>();
+        QuickSlots = QuickSlotsParent.GetComponentsInChildren<QuickSlot>();
+        SkillSlots = SkillSlotsParent.GetComponentsInChildren<QuickSlot>();
     }
     private void Update()
     {
         UseItem();
+        UseSkill();
     }
-    QuickSlot[] QuickSlots;
     void UseItem()
     {
         if (QuickSlots[0].LinkedSlot != null && Input.GetKeyDown(KeyCode.Alpha1))
@@ -42,6 +52,26 @@ public class QuickInven : MonoBehaviour
         if (QuickSlots[3].LinkedSlot != null && Input.GetKeyDown(KeyCode.Alpha4))
         {
             SpendItem(3);
+        }
+    }
+
+    void UseSkill()
+    {
+        if (SkillSlots[0] != null && Input.GetKeyDown(KeyCode.Q))
+        {
+            ActiveSkill(0);
+        }
+        if (SkillSlots[1] != null && Input.GetKeyDown(KeyCode.W))
+        {
+            ActiveSkill(1);
+        }
+        if (SkillSlots[2] != null && Input.GetKeyDown(KeyCode.E))
+        {
+            ActiveSkill(2);
+        }
+        if (SkillSlots[3] != null && Input.GetKeyDown(KeyCode.R))
+        {
+            ActiveSkill(3);
         }
     }
 
@@ -72,5 +102,30 @@ public class QuickInven : MonoBehaviour
         InventoryMgr.GetInstance().SpendPotion(QuickSlots[_i].item);
     }
 
+    void ActiveSkill(int _i)
+    {
+        if(SkillSlots[_i].item != null)
+        {
+            Item ThisItem = SkillSlots[_i].item;
+
+            switch (SkillSlots[_i].item.skilltype)
+            {
+                case Item.SkillType.Attack:
+                    {
+                        if (GameMgr.GetInstance().PPFlipX)
+                            Instantiate(ThisItem.itemPrefab, new Vector2((ThisItem.SizeX / 2) + 0.5f + Player.transform.position.x * -1, (ThisItem.SizeY / 2) + Player.transform.position.y), Quaternion.identity);
+                        else
+                            Instantiate(ThisItem.itemPrefab, new Vector2((ThisItem.SizeX / 2) + 0.5f + Player.transform.position.x, (ThisItem.SizeY / 2) + Player.transform.position.y), Quaternion.identity);
+                    }
+                    break;
+                case Item.SkillType.Jump:
+                    break;
+                case Item.SkillType.Recovery:
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
 
 }

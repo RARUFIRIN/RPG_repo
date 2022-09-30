@@ -89,7 +89,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
 
     public void OnDrop(PointerEventData eventData)          // 드래그 후 드롭 이벤트
     {
-        if (DragSlot.instance.TargetSlot != null)           // 드롭할 슬롯과 교체
+        if (DragSlot.instance.TargetSlot != null && DragSlot.instance.TargetSlot.item.itemType != Item.ItemType.Skill)           // 드롭할 슬롯과 교체
             ChangeSlot();
     }
 

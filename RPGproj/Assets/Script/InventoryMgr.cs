@@ -58,6 +58,10 @@ public class InventoryMgr : MonoBehaviour
     EquipSlot_Boot EquipSlot_Boot;
     bool B_EquipSlotActive = false;
 
+    [SerializeField]
+    GameObject SkillUIParent; // ½ºÅ³UI
+    bool B_SkillUIActive = false;
+
 
     private void Start()
     {
@@ -70,6 +74,7 @@ public class InventoryMgr : MonoBehaviour
     {
         OpenInventory();
         OpenEquipSlot();
+        OpenSkillUI();
     }
 
     public void Equip(Item.EquipType _Type, Slot _slot)
@@ -115,6 +120,15 @@ public class InventoryMgr : MonoBehaviour
         {
             B_EquipSlotActive = !B_EquipSlotActive;
             EquipSlotParent.SetActive(B_EquipSlotActive);
+        }
+    }
+
+    private void OpenSkillUI()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            B_SkillUIActive = !B_SkillUIActive;
+            SkillUIParent.SetActive(B_SkillUIActive);
         }
     }
 

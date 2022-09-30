@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef43d2022fdfc27478d5220627f48c97, type: 3}
+  m_Name: NAttack
+  m_EditorClassIdentifier: 
+  equiptype: 4
+  itemType: 3
+  itemName: NAttack
+  itemidx: 500
+  ItemImage: {fileID: 0}
+  itemPrefab: {fileID: 8575456058489248890, guid: 334c912b4a041834b80d26f30582ca64, type: 3}
+  RecoveryHP: 0
+  RecoveryMP: 0
+  RequiredLevel: 0
+  AttackDamage: 0
+  Defense: 0
+  SizeX: 1.5
+  SizeY: 1

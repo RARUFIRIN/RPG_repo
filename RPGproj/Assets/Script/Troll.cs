@@ -9,7 +9,7 @@ public class Troll : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     float DamagedCool = 2;
-    bool CanDamaged;
+    bool CanDamaged = true;
     int IsAttack;               // 공격 상태값
     int AttackPattern;
     int IsMove;                 // 움직임 상태값
@@ -21,7 +21,8 @@ public class Troll : MonoBehaviour
     GameObject AttackN;
     [SerializeField]
     GameObject AttackP;
-
+    [SerializeField]
+    GameObject WarningBox;
     float Speed = 1.5f;         // 몬스터 이동속도
     MonsterState State;         // 몬스터 상태값
     bool IsDying = false;
@@ -144,7 +145,10 @@ public class Troll : MonoBehaviour
     IEnumerator PowerAttack()
     {
         IsAttack = 1;
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(2.0f);
+        WarningBox.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+        WarningBox.SetActive(false);
         AttackP.SetActive(true);
         animator.SetInteger("IsAttack", 2);
         yield return new WaitForSeconds(0.2f);

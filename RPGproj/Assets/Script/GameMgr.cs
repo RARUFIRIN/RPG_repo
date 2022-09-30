@@ -41,6 +41,8 @@ public class GameMgr : MonoBehaviour
     int Def;                // 기본 방어력
     int Defense;            // 최종 방어력
 
+    bool PFlipX;
+
     [SerializeField]
     TextMeshProUGUI Text_Attack;
     [SerializeField]
@@ -141,7 +143,7 @@ public class GameMgr : MonoBehaviour
         }
 
 
-        if (MaxEXP < EXP)    // 경험치가 가득 차면 레벨업
+        if (MaxEXP <= EXP)    // 경험치가 가득 차면 레벨업
         {
             Level++;
             EXP = EXP - MaxEXP;
@@ -343,6 +345,11 @@ public class GameMgr : MonoBehaviour
     {
         get { return SceneNum; }
         set { SceneNum = value; }
+    }
+    public bool PPFlipX
+    {
+        get { return PFlipX; }
+        set { PFlipX = value; }
     }
     #endregion
 }

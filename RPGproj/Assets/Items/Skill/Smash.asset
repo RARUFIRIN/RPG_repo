@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef43d2022fdfc27478d5220627f48c97, type: 3}
+  m_Name: Smash
+  m_EditorClassIdentifier: 
+  equiptype: 4
+  itemType: 3
+  itemName: Smash
+  itemidx: 501
+  ItemImage: {fileID: 21300000, guid: 7887e6b066eed3a42a65868e4af801ca, type: 3}
+  itemPrefab: {fileID: 1411304457159762522, guid: 64be2ac3f0c7c9c45861639e15654eb3, type: 3}
+  RecoveryHP: 0
+  RecoveryMP: 0
+  RequiredLevel: 0
+  AttackDamage: 3
+  Defense: 0
+  SizeX: 2.75
+  SizeY: 1.75

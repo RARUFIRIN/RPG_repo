@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
+        GameMgr.GetInstance().PPFlipX = spriteRenderer.flipX;
         GameMgr.GetInstance().PPlayerPos = transform.position;
         if (!QuestMgr.GetInstance().GetIsAction())
         {
@@ -55,6 +56,7 @@ public class Player : MonoBehaviour
 
     void Move()
     {
+        
 
         // 오른쪽 움직임
         if (Input.GetKey(KeyCode.RightArrow))
@@ -147,16 +149,21 @@ public class Player : MonoBehaviour
     {
         if (CanAttack == 0 && Input.GetKeyDown(KeyCode.A))
         {
-            SkillMgr.GetInstance().SetSkill(0.5f, new Vector2(0, 0));
+            Item skill = SkillMgr.GetInstance().SetSkill(0.5f, new Vector2(0, 0), 0);
 
             if (spriteRenderer.flipX == false)
-                Instantiate(Attack_Box_Prefab, gameObject.transform.position + new Vector3(0.7f, 0.5f, 0), Quaternion.identity);
+                Instantiate(skill.itemPrefab, gameObject.transform.position + new Vector3(0.7f, 0.5f, 0), Quaternion.identity);
             else
-                Instantiate(Attack_Box_Prefab, gameObject.transform.position + new Vector3(-0.7f, 0.5f, 0), Quaternion.identity);
+                Instantiate(skill.itemPrefab, gameObject.transform.position + new Vector3(-0.7f, 0.5f, 0), Quaternion.identity);
 
             animator.SetInteger("IsAttack", 1);
             CanAttack = 1;
             StartCoroutine(Attackable());
+        }
+
+        if (CanAttack == 0 && Input.GetKeyDown(KeyCode.Q))
+        {
+
         }
     }
 

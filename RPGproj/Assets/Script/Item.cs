@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -11,6 +12,7 @@ public class Item : ScriptableObject
         Equip,
         Food,
         Ingredient,
+        Skill,
     }
 
     public enum EquipType
@@ -20,6 +22,13 @@ public class Item : ScriptableObject
         Helmet,
         Boot,
         None,
+    }
+
+    public enum SkillType
+    {
+        Attack,
+        Jump,
+        Recovery,
     }
 
     public EquipType equiptype;
@@ -37,6 +46,11 @@ public class Item : ScriptableObject
     public int RequiredLevel;
     public int AttackDamage;
     public int Defense;
+
+    // ½ºÅ³¿ë
+    public float SizeX;
+    public float SizeY;
+    public SkillType skilltype;
 }
 
 

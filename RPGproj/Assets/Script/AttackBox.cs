@@ -7,11 +7,14 @@ public class AttackBox : MonoBehaviour
     float SkillTime; // 유지시간
     Vector2 vec; // 이동 방향
     Rigidbody2D rigid;
+    SpriteRenderer spriteRenderer;
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.flipX = GameMgr.GetInstance().PPFlipX;
         rigid = GetComponent<Rigidbody2D>();
         SkillTime = SkillMgr.GetInstance().GetSkillTime();
-        vec = SkillMgr.GetInstance().GetSkillVec();
+        vec = SkillMgr.GetInstance().GetSkillVelocity();
         rigid.velocity = vec;
         StartCoroutine(EndSkill());
     }
@@ -21,13 +24,5 @@ public class AttackBox : MonoBehaviour
     {
         yield return new WaitForSeconds(SkillTime);
         Destroy(gameObject);
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.CompareTag("Monster"))
-        {
-            Destroy(this);
-        }
     }
 }

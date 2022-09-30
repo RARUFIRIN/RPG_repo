@@ -20,10 +20,8 @@ public class QuickSlot : MonoBehaviour, IDropHandler
     [SerializeField]
     private GameObject Parent;
     public int OnClear;
-    bool IsChangeNow;
-    private void Awake()
-    {
-    }
+
+
     private void Update()
     {
         if (item != null && LinkedSlot.item != item) // 퀵 슬롯 등록 상태에서 인벤토리 내부에서 자리변화가 일어났을 때 호출
@@ -45,21 +43,25 @@ public class QuickSlot : MonoBehaviour, IDropHandler
             }
         }
 
-        if (LinkedSlot != null && LinkedSlot.itemCount > 0)
+        if (LinkedSlot != null && LinkedSlot.item.itemType != Item.ItemType.Skill) // 스킬일 경우 개수표시및 동기화를 하지 않음
         {
-            itemCount = LinkedSlot.itemCount;
-            text_count.text = itemCount.ToString();
-        }
-        else if(LinkedSlot != null && LinkedSlot.item == null)
-        {
-            QuickInven.GetInstance().ClearSlot(this);
-            OnClear = 1;
-        }
 
-        if (OnClear == 1 && itemCount == 0)
-        {
-            image_count.SetActive(false);
-            OnClear = 0;
+            if (LinkedSlot.itemCount > 0)
+            {
+                itemCount = LinkedSlot.itemCount;
+                text_count.text = itemCount.ToString();
+            }
+            else if (LinkedSlot.item == null)
+            {
+                QuickInven.GetInstance().ClearSlot(this);
+                OnClear = 1;
+            }
+
+            if (OnClear == 1 && itemCount == 0)
+            {
+                image_count.SetActive(false);
+                OnClear = 0;
+            }
         }
 
 
@@ -76,12 +78,12 @@ public class QuickSlot : MonoBehaviour, IDropHandler
 
     private void RegistSlot()
     {
-        if (DragSlot.instance.TargetSlot.item.itemType == Item.ItemType.Food)
+        if (gameObject.tag == "QuickSlot" && DragSlot.instance.TargetSlot.item.itemType == Item.ItemType.Food)
         {
             QuickInven.GetInstance().SlotCheck();           // 퀵 슬롯에 등록할 아이템이 이미 등록되어있으면 삭제
 
             QuickInven.GetInstance().ClearSlot(this);       // 등록할 슬롯을 비움
-            
+
 
             LinkedSlot = DragSlot.instance.TargetSlot;      // 가져올 슬롯정보를 저장함.
             item = LinkedSlot.item;
@@ -92,11 +94,22 @@ public class QuickSlot : MonoBehaviour, IDropHandler
                 image_count.SetActive(true);
                 itemCount = DragSlot.instance.TargetSlot.itemCount;
             }
+            return;
         }
-        else
+
+
+        if (gameObject.tag == "SkillSlot" && DragSlot.instance.TargetSlot.item.itemType == Item.ItemType.Skill)
         {
-            Debug.Log("소모품만 등록할 수 있습니다.");
+            QuickInven.GetInstance().SlotCheck();
+            QuickInven.GetInstance().ClearSlot(this);
+            LinkedSlot = DragSlot.instance.TargetSlot;
+            item = LinkedSlot.item;
+            ItemImage.sprite = LinkedSlot.item.ItemImage;
+            SetColor(1);
+            return;
         }
+
+
     }
 
     public void SetColor(float _alpha) // 아이템 아이콘 투명도 조절
