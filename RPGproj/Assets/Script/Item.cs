@@ -51,6 +51,8 @@ public class Item : ScriptableObject
     public float SizeX;
     public float SizeY;
     public SkillType skilltype;
+    public float Cooltime;
+
 }
 
 

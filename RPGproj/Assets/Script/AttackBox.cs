@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AttackBox : MonoBehaviour
 {
+    [SerializeField]
     float SkillTime; // 유지시간
     Vector2 vec; // 이동 방향
     Rigidbody2D rigid;
@@ -13,10 +14,10 @@ public class AttackBox : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.flipX = GameMgr.GetInstance().PPFlipX;
         rigid = GetComponent<Rigidbody2D>();
-        SkillTime = SkillMgr.GetInstance().GetSkillTime();
         vec = SkillMgr.GetInstance().GetSkillVelocity();
         rigid.velocity = vec;
         StartCoroutine(EndSkill());
+        Debug.Log("XX");
     }
 
 

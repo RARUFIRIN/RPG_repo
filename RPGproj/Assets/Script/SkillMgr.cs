@@ -36,11 +36,14 @@ public class SkillMgr : MonoBehaviour
     Vector2 SkillVelocity;
     [SerializeField]
     Item NAttack;
+    bool NAttackCool = true;
     [SerializeField]
     Item SAttack;
+    bool SAttackCool = true;
     [SerializeField]
     Item Jump;
-    
+    bool JumpCool = true;
+
 
     public Item SetSkill(float _f, Vector2 _vec, int _skillNum)
     {
@@ -63,5 +66,69 @@ public class SkillMgr : MonoBehaviour
     public Vector2 GetSkillVelocity()
     {
         return SkillVelocity;
+    }
+
+    public bool GetSkillCoolDown(Item item)
+    {
+        switch (item.itemidx)
+        {
+            case 500:
+                {
+                    return NAttackCool;
+                }
+            case 501:
+                {
+                    return SAttackCool;
+                }
+            case 502:
+                {
+                    return JumpCool;
+                }
+            default:
+                {
+                    return false;
+                }
+        }
+    }
+
+    public void SetSkillCoolDown(Item item, bool _b)
+    {
+        switch (item.itemidx)
+        {
+            case 500:
+                {
+                    NAttackCool = _b;
+                    break;
+                }
+            case 501:
+                {
+                    SAttackCool = _b;
+                    break;
+                }
+            case 502:
+                {
+                    JumpCool = _b;
+                    break;
+                }
+            default:
+                break;
+        }
+    }
+
+    public int returnDmg(string str)
+    {
+        if(str == "SAttack")
+        {
+            return SAttack.AttackDamage * GameMgr.GetInstance().PAttackDamage;
+        }
+        else if(str == "NAttack")
+        {
+            return NAttack.AttackDamage * GameMgr.GetInstance().PAttackDamage;
+        }
+        else
+        {
+            return 0;
+        }
+
     }
 }

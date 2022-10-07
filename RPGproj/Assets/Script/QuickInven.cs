@@ -33,7 +33,6 @@ public class QuickInven : MonoBehaviour
     private void Update()
     {
         UseItem();
-        UseSkill();
     }
     void UseItem()
     {
@@ -55,26 +54,6 @@ public class QuickInven : MonoBehaviour
         }
     }
 
-    void UseSkill()
-    {
-        if (SkillSlots[0] != null && Input.GetKeyDown(KeyCode.Q))
-        {
-            ActiveSkill(0);
-        }
-        if (SkillSlots[1] != null && Input.GetKeyDown(KeyCode.W))
-        {
-            ActiveSkill(1);
-        }
-        if (SkillSlots[2] != null && Input.GetKeyDown(KeyCode.E))
-        {
-            ActiveSkill(2);
-        }
-        if (SkillSlots[3] != null && Input.GetKeyDown(KeyCode.R))
-        {
-            ActiveSkill(3);
-        }
-    }
-
     public void SlotCheck()
     {
         for (int i = 0; i < QuickSlots.Length; i++)
@@ -82,6 +61,14 @@ public class QuickInven : MonoBehaviour
             if (QuickSlots[i].item != null && QuickSlots[i].item == DragSlot.instance.TargetSlot.item)
             {
                 ClearSlot(QuickSlots[i]);
+            }
+        }
+
+        for (int i = 0; i < QuickSlots.Length; i++)
+        {
+            if (SkillSlots[i].item != null && SkillSlots[i].item == DragSlot.instance.TargetSlot.item)
+            {
+                ClearSlot(SkillSlots[i]);
             }
         }
     }
@@ -102,30 +89,12 @@ public class QuickInven : MonoBehaviour
         InventoryMgr.GetInstance().SpendPotion(QuickSlots[_i].item);
     }
 
-    void ActiveSkill(int _i)
+
+    public Item returnSkill(int i)
     {
-        if(SkillSlots[_i].item != null)
-        {
-            Item ThisItem = SkillSlots[_i].item;
-
-            switch (SkillSlots[_i].item.skilltype)
-            {
-                case Item.SkillType.Attack:
-                    {
-                        if (GameMgr.GetInstance().PPFlipX)
-                            Instantiate(ThisItem.itemPrefab, new Vector2((ThisItem.SizeX / 2) + 0.5f + Player.transform.position.x * -1, (ThisItem.SizeY / 2) + Player.transform.position.y), Quaternion.identity);
-                        else
-                            Instantiate(ThisItem.itemPrefab, new Vector2((ThisItem.SizeX / 2) + 0.5f + Player.transform.position.x, (ThisItem.SizeY / 2) + Player.transform.position.y), Quaternion.identity);
-                    }
-                    break;
-                case Item.SkillType.Jump:
-                    break;
-                case Item.SkillType.Recovery:
-                    break;
-                default:
-                    break;
-            }
-        }
+        if (SkillSlots[i].item != null)
+            return SkillSlots[i].item;
+        else
+            return null;
     }
-
 }

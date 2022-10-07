@@ -8,13 +8,6 @@ public class Troll : MonoBehaviour
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
 
-    float DamagedCool = 2;
-    bool CanDamaged = true;
-    int IsAttack;               // 공격 상태값
-    int AttackPattern;
-    int IsMove;                 // 움직임 상태값
-    public float MaxHP = 1000;
-    public float HP = 1000;              // HP
     [SerializeField]
     SpriteRenderer HPgage;
     [SerializeField]
@@ -23,7 +16,16 @@ public class Troll : MonoBehaviour
     GameObject AttackP;
     [SerializeField]
     GameObject WarningBox;
-    float Speed = 1.5f;         // 몬스터 이동속도
+
+    float DamagedCool = 2;
+    bool CanDamaged = true;
+    int IsAttack;               // 공격 상태값
+    int AttackPattern;
+    int IsMove;                 // 움직임 상태값
+    public float MaxHP = 1000;
+    public float HP = 1000;              // HP
+
+    float Speed = 2.5f;         // 몬스터 이동속도
     MonsterState State;         // 몬스터 상태값
     bool IsDying = false;
     
@@ -132,6 +134,14 @@ public class Troll : MonoBehaviour
     }
     IEnumerator NormalAttack()
     {
+        if(spriteRenderer.flipX)
+        {
+            AttackN.transform.position = new Vector2(gameObject.transform.position.x - 1, AttackN.transform.position.y);
+        }
+        else
+        {
+            AttackN.transform.position = new Vector2(gameObject.transform.position.x + 1, AttackN.transform.position.y);
+        }
         IsAttack = 1;
         yield return new WaitForSeconds(1.0f);
         AttackN.SetActive(true);
@@ -189,12 +199,12 @@ public class Troll : MonoBehaviour
 
     }
 
-    void Damaged()
+    void Damaged(int Dmg)
     {
-        if (CanDamaged)
+        if(CanDamaged)
         {
             StartCoroutine(DamagedCoolDown());
-            HP -= GameMgr.GetInstance().PAttackDamage;
+            HP -= Dmg;
         }
     }
     void HPControl() // 체력 바
@@ -211,10 +221,9 @@ public class Troll : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("AttackBox") && State != MonsterState.Damaged)
+        if (collision.gameObject.layer == LayerMask.NameToLayer("AttackBox") && State != MonsterState.Damaged)
         {
-            if(collision.CompareTag("Player"))
-            Damaged();
+            Damaged(SkillMgr.GetInstance().returnDmg(collision.tag));
         }
     }
     void Move(int _i /* -1 left 1 right*/)
@@ -259,7 +268,6 @@ public class Troll : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(MosterPos - new Vector2(RayDist / 2 , - 0.5f), dir, RayDist, LayerMask.GetMask("Player"));
         if (hit.collider != null && hit.transform.CompareTag("Player"))
         {
-            
             State = MonsterState.Trace;
             Debug.Log(hit);
         }

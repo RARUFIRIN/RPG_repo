@@ -21,7 +21,9 @@ MonoBehaviour:
   RecoveryHP: 0
   RecoveryMP: 0
   RequiredLevel: 0
-  AttackDamage: 0
+  AttackDamage: 1
   Defense: 0
-  SizeX: 1.5
+  SizeX: 1
   SizeY: 1
+  skilltype: 0
+  Cooltime: 0

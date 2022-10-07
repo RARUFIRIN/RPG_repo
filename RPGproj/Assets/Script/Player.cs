@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    GameObject Attack_Box_Prefab;
+    Item NAttack;
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
 
@@ -56,8 +57,6 @@ public class Player : MonoBehaviour
 
     void Move()
     {
-        
-
         // 오른쪽 움직임
         if (Input.GetKey(KeyCode.RightArrow))
         {
@@ -149,21 +148,77 @@ public class Player : MonoBehaviour
     {
         if (CanAttack == 0 && Input.GetKeyDown(KeyCode.A))
         {
-            Item skill = SkillMgr.GetInstance().SetSkill(0.5f, new Vector2(0, 0), 0);
-
-            if (spriteRenderer.flipX == false)
-                Instantiate(skill.itemPrefab, gameObject.transform.position + new Vector3(0.7f, 0.5f, 0), Quaternion.identity);
-            else
-                Instantiate(skill.itemPrefab, gameObject.transform.position + new Vector3(-0.7f, 0.5f, 0), Quaternion.identity);
+            Item skill = NAttack;
+            UseSkill(skill);
 
             animator.SetInteger("IsAttack", 1);
             CanAttack = 1;
             StartCoroutine(Attackable());
         }
 
-        if (CanAttack == 0 && Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
+            Item skill = QuickInven.GetInstance().returnSkill(0);
+            if (skill != null)
+            {
+                UseSkill(skill);
+            }
 
+        }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            Item skill = QuickInven.GetInstance().returnSkill(1);
+            if (skill != null)
+            {
+                UseSkill(skill);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Item skill = QuickInven.GetInstance().returnSkill(2);
+            if (skill != null)
+            {
+                UseSkill(skill);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Item skill = QuickInven.GetInstance().returnSkill(3);
+            if (skill != null)
+            {
+                UseSkill(skill);
+            }
+
+        }
+
+    }
+
+    void UseSkill(Item _skill)
+    {
+        if (SkillMgr.GetInstance().GetSkillCoolDown(_skill) == true)
+        {
+            if (_skill.skilltype == Item.SkillType.Attack)
+            {
+                if (spriteRenderer.flipX == true)
+                    Instantiate(_skill.itemPrefab, new Vector2(transform.position.x - (_skill.SizeX / 2) - 0.5f, (_skill.SizeY / 2) + transform.position.y), Quaternion.identity);
+                else
+                    Instantiate(_skill.itemPrefab, new Vector2(transform.position.x + (_skill.SizeX / 2) + 0.5f, (_skill.SizeY / 2) + transform.position.y), Quaternion.identity);
+                animator.SetInteger("IsAttack", 1);
+                StartCoroutine(Attackable());
+                StartCoroutine(SkillColldown(_skill, _skill.Cooltime));
+                Debug.Log(_skill);
+            }
+            else if (_skill.skilltype == Item.SkillType.Jump)
+            {
+
+            }
+            else if (_skill.skilltype == Item.SkillType.Recovery)
+            {
+
+            }
         }
     }
 
@@ -175,6 +230,13 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(Attack_Speed);
         animator.SetInteger("IsAttack", 0);
         CanAttack = 0;
+    }
+
+    IEnumerator SkillColldown(Item item, float f)
+    {
+        SkillMgr.GetInstance().SetSkillCoolDown(item, false);
+        yield return new WaitForSeconds(f);
+        SkillMgr.GetInstance().SetSkillCoolDown(item, true);
     }
 
     IEnumerator DamagedCoolDown()

@@ -383,12 +383,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c7705562f4758441a7b4032b0cfb7b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 1000
-  HP: 1000
   HPgage: {fileID: 8850453885913340582}
   AttackN: {fileID: 613929876026363657}
   AttackP: {fileID: 1652884519646245733}
   WarningBox: {fileID: 8579850804377282593}
+  MaxHP: 1000
+  HP: 1000
   DropItem_Prefab: {fileID: 0}
 --- !u!1 &5992926742693077880
 GameObject:

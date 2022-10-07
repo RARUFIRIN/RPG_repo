@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b95515ab6eab848aff486bfac73a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Attack_Box_Prefab: {fileID: 8575456058489248890, guid: 334c912b4a041834b80d26f30582ca64, type: 3}
+  NAttack: {fileID: 11400000, guid: b2f4b581901debb44894562cffa89ba0, type: 2}
   CanDamaged: 1
   CanAttack: 0
 --- !u!212 &12810626
@@ -6808,6 +6808,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 607711280}
   m_CullTransparentMesh: 1
+--- !u!1 &616167792 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1220499536719151668, guid: 24c803d54fd17c34caa047c9029fb961, type: 3}
+  m_PrefabInstance: {fileID: 2094595517376663627}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &616167795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616167792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb909113e44a93c42b6b8e35e0aa8130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkillTime: 2
 --- !u!1 &617405407
 GameObject:
   m_ObjectHideFlags: 0
@@ -21488,9 +21506,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de81aa4610593fb46927835dd2f5ca9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NAttack: {fileID: 0}
-  SAttack: {fileID: 0}
-  Jump: {fileID: 0}
+  NAttack: {fileID: 11400000, guid: b2f4b581901debb44894562cffa89ba0, type: 2}
+  SAttack: {fileID: 11400000, guid: 349a3774564ef8b49bddb0cc0770319c, type: 2}
+  Jump: {fileID: 11400000, guid: 8808aca0fc9298749b2223c0d7476938, type: 2}
 --- !u!1 &1816917718
 GameObject:
   m_ObjectHideFlags: 0
@@ -29492,6 +29510,10 @@ PrefabInstance:
     - target: {fileID: 1411304457159762522, guid: 64be2ac3f0c7c9c45861639e15654eb3, type: 3}
       propertyPath: m_TagString
       value: SAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641049434804053715, guid: 64be2ac3f0c7c9c45861639e15654eb3, type: 3}
+      propertyPath: SkillTime
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7077266265808946873, guid: 64be2ac3f0c7c9c45861639e15654eb3, type: 3}
       propertyPath: m_RootOrder

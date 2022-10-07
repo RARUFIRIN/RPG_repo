@@ -199,7 +199,7 @@ public class Hog : MonoBehaviour
     }
 
 
-    void Damaged()
+    void Damaged(int Dmg)
     {
         State = MonsterState.Damaged;
         animator.SetInteger("IsWalk", 0);
@@ -213,7 +213,7 @@ public class Hog : MonoBehaviour
         {
             rigid.AddForce(new Vector2(-40, 100));
         }
-        HP -= GameMgr.GetInstance().PAttackDamage;
+        HP -= Dmg;
         StartCoroutine(ChangeState(0.5f, MonsterState.Trace));
     }
     void HPControl() // Ã¼·Â ¹Ù
@@ -232,8 +232,7 @@ public class Hog : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("AttackBox") && State != MonsterState.Damaged)
         {
-            if (collision.CompareTag("Player"))
-                Damaged();
+            Damaged(SkillMgr.GetInstance().returnDmg(collision.tag));
         }
     }
     void Move(int _i /* -1 left 1 right*/)

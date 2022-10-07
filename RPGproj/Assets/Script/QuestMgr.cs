@@ -62,10 +62,15 @@ public class QuestMgr : MonoBehaviour
     {
         // 일반
         TalkData.Add(1000 + 20, new string[] { "튜토리얼은 끝이야 포탈을 통해 다음 지역으로 가 봐" });
+
+
+        TalkData.Add(2000 + 0, new string[] { "아직 튜토리얼을 마치지 않았군" , "튜토리얼을 끝마치고 오도록 하시게" });
         TalkData.Add(2000 + 10, new string[] { "아직 튜토리얼을 마치지 않았군" , "튜토리얼을 끝마치고 오도록 하시게" });
         TalkData.Add(2000 + 11, new string[] { "아직 튜토리얼을 마치지 않았군" , "튜토리얼을 끝마치고 오도록 하시게" });
         TalkData.Add(2000 + 12, new string[] { "아직 튜토리얼을 마치지 않았군" , "튜토리얼을 끝마치고 오도록 하시게" });
         TalkData.Add(2000 + 13, new string[] { "아직 튜토리얼을 마치지 않았군" , "튜토리얼을 끝마치고 오도록 하시게" });
+
+        
 
 
         // 퀘스트용
@@ -74,6 +79,14 @@ public class QuestMgr : MonoBehaviour
         TalkData.Add(1000 + 11, new string[] { "아직 구하지 못한거야?" , "구해야 할 건 사과랑 맥주 3개야"});
         TalkData.Add(1000 + 12, new string[] { "어디보자.." , "잘 가져왔구나! 어렵진 않았을거야.", "장비를 줄테니까 다음 지역으로 가 봐"});
         TalkData.Add(1000 + 13, new string[] { });
+
+        TalkData.Add(2000 + 20, new string[] { "저 앞에있는 호그를 잡아서 실버소드를 구해다주게", "보상은 내가 사용하지 못하던 검을 주도록 하겠네" });
+        TalkData.Add(2000 + 21, new string[] { "아직 구하지 못했나?", "레벨도 올릴 겸 조금 더 힘내주게" });
+        TalkData.Add(2000 + 22, new string[] { "실버 소드가 맞군!", "내가 사용하지 못하던 검을 주도록 하지", "자네라면 사용할 수 있을거야" });
+        TalkData.Add(2000 + 23, new string[] { });
+
+        TalkData.Add(2000 + 30, new string[] { "" });
+
     }
 
 
@@ -189,7 +202,15 @@ public class QuestMgr : MonoBehaviour
                     }
                 }
                 break;
+            case (2021):
+                {
+                    if(InventoryMgr.GetInstance().SearchItem(203, 1))
+                    {
+                        QuestClearCheck[2021] = true;
+                    }
 
+                }
+                break;
             default:
                 {
                     break;
